@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter } from "react-router-dom";
 import "./App.css";
 import BeerPage from "./pages/BeerPage";
 import MainPage from "./pages/MainPage";
@@ -7,14 +7,14 @@ import MainPage from "./pages/MainPage";
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
         <Route path="/" element={<MainPage/>}/>
           <Route path="beer">
             <Route path=":id" element={<BeerPage/>}/>
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
