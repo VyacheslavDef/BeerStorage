@@ -63,3 +63,8 @@ p {
 .page_current {
     background-color: green;
 }
+
+.beer_container {
+    height: auto;
+    width: 100%;
+}

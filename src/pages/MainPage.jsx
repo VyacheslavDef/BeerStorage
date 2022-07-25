@@ -22,7 +22,6 @@ function MainPage() {
 
   useEffect(() => {
     beerPosts(page, perPage);
-    console.log(page);
   }, [page]);
 
   async function beerPosts(page, perPage) {
