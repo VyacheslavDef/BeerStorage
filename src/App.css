@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+}
+
+button {
+    padding: 5px 15px;
+    background: transparent;
+    border: 2px solid rgb(255, 165, 156);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.beer_card_container {
+    width: 300px;
+    border: 5px solid rosybrown;
+    border-radius: 10px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+.img_beer {
+    width: auto;
+    height: 230px;
+}
+
+
+.img_beer_page {
+    width: auto;
+    height: 300px;
+}
+
+.beer_page_mid {
+    margin: 10px;
+}
+
+.beer_page_bot {
+margin: 10px;
+width: 600px;
+}
+
+p {
+    padding: 5px;
+}
+
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page_current {
+    background-color: green;
+}
