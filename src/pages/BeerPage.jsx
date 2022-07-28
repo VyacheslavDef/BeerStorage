@@ -17,8 +17,8 @@ const BeerPage = (props) => {
 
 
   return beer ? (
-    <div className="beer_container">
-      <div>
+    <div className="box">
+      <div className="beer_container">
         <div className="beer_page_top">
           <img className="img_beer_page" src={beer.image_url} alt="" />
         </div>

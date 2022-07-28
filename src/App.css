@@ -68,3 +68,8 @@ p {
     height: auto;
     width: 100%;
 }
+
+.box {
+    max-width: 800px;
+    width: 100%;
+}
