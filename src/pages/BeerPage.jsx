@@ -17,8 +17,8 @@ const BeerPage = (props) => {
 
 
   return beer ? (
-    <div>
-      <div className="beer_container">
+    <div className="beer_container">
+      <div>
         <div className="beer_page_top">
           <img className="img_beer_page" src={beer.image_url} alt="" />
         </div>
@@ -53,10 +53,4 @@ const BeerPage = (props) => {
 
 export default BeerPage;
 
-// {/* <p>
-// {/* {beer.food_pairing.join('. ')} */}
-// {beer.food_pairing[0]}
-// {beer.food_pairing[1]}
-// {beer.food_pairing[2]}
-// {beer.food_pairing[3]}
-// </p> */}
+
