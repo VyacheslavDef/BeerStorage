@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import PostService from "../API/PostService";
+import Loader from "../components/loader/Loader";
 
 const BeerPage = (props) => {
   const { id } = useParams();
@@ -47,7 +48,7 @@ const BeerPage = (props) => {
       </Link>
     </div>
   ) : (
-    <h1>Загрузка</h1>
+    <Loader/>
   );
 };
 

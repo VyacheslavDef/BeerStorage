@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import PostService from "../API/PostService";
 import "../App.css";
 import BeerCard from "../components/BeerCard";
+import Loader from "../components/loader/Loader";
 import { getPages, getPagesArray } from "../utils/utils";
 
 function MainPage() {
@@ -31,7 +32,7 @@ function MainPage() {
   }
 
   if (!beerPost.length) {
-    return <h1 style={{ textAlign: "center" }}>ERROR</h1>;
+    return <Loader/>;
   }
 
   const changePage = (page) => {
