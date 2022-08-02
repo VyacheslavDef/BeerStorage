@@ -1,6 +1,8 @@
 * {
     margin: 0;
+    box-sizing: border-box;
 }
+
 
 button {
     padding: 5px 15px;
@@ -72,4 +74,16 @@ p {
 .box {
     max-width: 800px;
     width: 100%;
+}
+
+.mb {
+    margin-bottom: 25px;
+}
+
+.header_bc {
+    padding: 5px 15px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rosybrown;
+    display: inline-block;
 }

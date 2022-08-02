@@ -19,11 +19,14 @@ const BeerPage = (props) => {
 
   return beer ? (
     <div className="box">
+      <Link to={"/"}>
+        <button className="mb">Назад</button>
+      </Link>
       <div className="beer_container">
         <div className="beer_page_top">
           <img className="img_beer_page" src={beer.image_url} alt="" />
         </div>
-        <div className="beer_page_mid">
+        <div className="header_bc beer_page_mid">
           <h1>{beer.name}</h1>
           <h3>{beer.tagline}</h3>
         </div>
@@ -43,9 +46,6 @@ const BeerPage = (props) => {
           />
         </div>
       </div>
-      <Link to={"/"}>
-        <button>Назад</button>
-      </Link>
     </div>
   ) : (
     <Loader/>
