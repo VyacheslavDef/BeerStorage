@@ -31,19 +31,12 @@ const BeerPage = (props) => {
           <h3>{beer.tagline}</h3>
         </div>
         <div className="beer_page_bot">
-          <p><b>Описание: </b>{beer.description}</p>
-          <p>
-            <b>ABV: </b>
-            {beer.abv}
-          </p>
-          <p>
-            <b>Cочетаемость с едой: </b>
-          </p>
-          <p
-            dangerouslySetInnerHTML={{
-              __html: beer.food_pairing.join(".<br/>"),
-            }}
-          />
+          <p><b>Описание: </b></p>
+          <p>{beer.description}</p>
+          <p><b>ABV: </b></p>
+          <p>{beer.abv}</p>
+          <p><b>Cочетаемость с едой: </b></p>
+          {beer.food_pairing.map((q)=>(<div className="p" key={q}>{q}.</div>))}
         </div>
       </div>
     </div>

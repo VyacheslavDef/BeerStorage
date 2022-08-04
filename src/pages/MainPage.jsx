@@ -3,7 +3,8 @@ import PostService from "../API/PostService";
 import "../App.css";
 import BeerCard from "../components/BeerCard";
 import Loader from "../components/loader/Loader";
-import { getPages, getPagesArray } from "../utils/utils";
+import Pagination from "../components/Pagination";
+import { getPages } from "../utils/utils";
 
 function MainPage() {
   const [beerPost, setBeerPost] = useState([]);
@@ -15,7 +16,7 @@ function MainPage() {
   const [page, setPage] = useState(1);
   const [perPage] = useState(25);
 
-  let pagesArray = getPagesArray(totalPages);
+
 
   const filtersBeer = beerPost.filter((beer) => {
     return beer.name.toLowerCase().includes(searchBeer.toLowerCase());
@@ -23,7 +24,7 @@ function MainPage() {
 
   useEffect(() => {
     beerPosts(page, perPage);
-  }, [page]);
+  }, );
 
   async function beerPosts(page, perPage) {
     const responce = await PostService.getAll(page, perPage);
@@ -42,6 +43,7 @@ function MainPage() {
 
   return (
     <div className="container">
+      <h1>BEERS STORAGE</h1>
       <input
         placeholder="Search..."
         value={searchBeer}
@@ -50,17 +52,7 @@ function MainPage() {
       {filtersBeer.map((beerPost) => (
         <BeerCard beerPost={beerPost} key={beerPost.id} />
       ))}
-      <div className="btn_div">
-        {pagesArray.map((p) => (
-          <button
-            className={page === p ? "page_current" : ""}
-            onClick={() => changePage(p)}
-            key={p}
-          >
-            {p}
-          </button>
-        ))}
-      </div>
+      <Pagination page={page} totalPages={totalPages} changePage={changePage}/>
     </div>
   );
 }
