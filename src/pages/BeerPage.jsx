@@ -11,11 +11,9 @@ const BeerPage = (props) => {
     const beer = await PostService.getById(id);
     return setBeer(beer);
   }
-
   useEffect(() => {
     fetchBeerId(id);
   }, [id]);
-
 
   return beer ? (
     <div className="box">
@@ -46,5 +44,3 @@ const BeerPage = (props) => {
 };
 
 export default BeerPage;
-
-

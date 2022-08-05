@@ -24,7 +24,7 @@ function MainPage() {
 
   useEffect(() => {
     beerPosts(page, perPage);
-  }, );
+  },[page] );
 
   async function beerPosts(page, perPage) {
     const responce = await PostService.getAll(page, perPage);
