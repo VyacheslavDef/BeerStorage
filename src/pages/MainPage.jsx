@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import PostService from "../API/PostService";
 import "../App.css";
 import BeerCard from "../components/BeerCard";
@@ -11,11 +12,12 @@ function MainPage() {
 
   const [searchBeer, setSearchBeer] = useState("");
 
+  const {per_page, current_page} = useParams() 
+
   const [totalCount] = useState(325);
   const [totalPages, setTotalPages] = useState(0);
-  const [page, setPage] = useState(1);
-  const [perPage] = useState(25);
-
+  const [page, setPage] = useState(current_page);
+  const [perPage] = useState(per_page);
 
 
   const filtersBeer = beerPost.filter((beer) => {
@@ -24,7 +26,9 @@ function MainPage() {
 
   useEffect(() => {
     beerPosts(page, perPage);
-  },[page] );
+  },[page, perPage] );
+
+
 
   async function beerPosts(page, perPage) {
     const responce = await PostService.getAll(page, perPage);
@@ -36,9 +40,9 @@ function MainPage() {
     return <Loader/>;
   }
 
-  const changePage = (page) => {
+  const changePage = (page, per_page) => {
     setPage(page);
-    beerPosts(page, perPage);
+    beerPosts(page, per_page);
   };
 
   return (
@@ -50,9 +54,11 @@ function MainPage() {
         onChange={(e) => setSearchBeer(e.target.value)}
       ></input>
       {filtersBeer.map((beerPost) => (
-        <BeerCard beerPost={beerPost} key={beerPost.id} />
+        <BeerCard beerPost={beerPost} key={beerPost.id}/>
       ))}
-      <Pagination page={page} totalPages={totalPages} changePage={changePage}/>
+
+        <Pagination page={page} totalPages={totalPages} changePage={changePage}/>
+
     </div>
   );
 }

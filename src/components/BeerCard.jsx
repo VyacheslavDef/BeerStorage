@@ -20,7 +20,7 @@ const BeerCard = (props) => {
       <div className="beer_card_bot">
         <small>{shortDesc}</small>
       </div>
-      <Link to={"beer/" + props.beerPost.id}>
+      <Link to={"/beers/" + props.beerPost.id}>
         <button>Подробнее</button>
       </Link>
     </div>

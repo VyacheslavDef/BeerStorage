@@ -1,21 +1,21 @@
 import React from "react";
-import { Routes, Route, HashRouter } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import BeerPage from "./pages/BeerPage";
+import ErrorPage from "./pages/ErrorPage";
 import MainPage from "./pages/MainPage";
+import TitlePage from "./pages/TitlePage";
 
 function App() {
   return (
-    <div className="App">
-      <HashRouter>
-        <Routes>
-        <Route path="/" element={<MainPage/>}/>
-          <Route path="beer">
-            <Route path=":id" element={<BeerPage/>}/>
-          </Route>
-        </Routes>
-      </HashRouter>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<TitlePage />} />
+        <Route path="/page/:current_page/:per_page" element={<MainPage />} />
+        <Route path="/beers/:id" element={<BeerPage />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
+    </>
   );
 }
 

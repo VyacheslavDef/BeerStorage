@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import PostService from "../API/PostService";
 import Loader from "../components/loader/Loader";
 
-const BeerPage = (props) => {
+const BeerPage = () => {
   const { id } = useParams();
   const [beer, setBeer] = useState(null);
+  const navigate = useNavigate()
+  const goBack = () => navigate(-1)
 
   async function fetchBeerId(id) {
     const beer = await PostService.getById(id);
@@ -17,9 +19,9 @@ const BeerPage = (props) => {
 
   return beer ? (
     <div className="box">
-      <Link to={"/"}>
-        <button className="mb">Назад</button>
-      </Link>
+
+        <button onClick={goBack} className="mb">Назад</button>
+
       <div className="beer_container">
         <div className="beer_page_top">
           <img className="img_beer_page" src={beer.image_url} alt="" />
