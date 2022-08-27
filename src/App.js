@@ -10,9 +10,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<TitlePage />} />
-        <Route path="/page/:current_page/:per_page" element={<MainPage />} />
-        <Route path="/beers/:id" element={<BeerPage />} />
+        <Route path="/test-on-react" element={<TitlePage />} />
+        <Route path="/test-on-react/page/:current_page/:per_page" element={<MainPage />} />
+        <Route path="test-on-react/beers/:id" element={<BeerPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </>
