@@ -46,9 +46,11 @@ function MainPage() {
   };
 
   return (
+    <section className="main_page">
     <div className="container">
       <h1>BEERS STORAGE</h1>
       <input
+      className="mb-5"
         placeholder="Search..."
         value={searchBeer}
         onChange={(e) => setSearchBeer(e.target.value)}
@@ -60,6 +62,7 @@ function MainPage() {
         <Pagination page={page} totalPages={totalPages} changePage={changePage}/>
 
     </div>
+    </section>
   );
 }
 

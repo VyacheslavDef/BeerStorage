@@ -2,27 +2,25 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { getPagesArray } from "../utils/utils";
 
+const Pagination = ({ page, totalPages, changePage }) => {
+  let pagesArray = getPagesArray(totalPages);
+  const per_page = 10;
 
-const Pagination = ({page, totalPages, changePage}) => {
-
-let pagesArray = getPagesArray(totalPages);
-const per_page = 10
-
-// const newPagesArray = pagesArray.slice(0, 10)
-
+  // const newPagesArray = pagesArray.slice(0, 10)
   return (
-    <div className="btn_div">
-      
+    <ul className="pagination">
       {pagesArray.map((p) => (
-        <Link
-          to={`/test-on-react/page/${p}/${per_page}`}
-          onClick={() => changePage(p, per_page)}
-          key={p}
-        ><button className={page === p ? "page_current" : ""}>
-          {p}
-          </button></Link>   
+        <li key={p} className={page === p ? "page-item active" : "page-item"}>
+          <Link
+          className="page-link"
+            to={`/test-on-react/page/${p}:${per_page}`}
+            onClick={() => changePage(p, per_page)}
+          >
+            {p}
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 };
 

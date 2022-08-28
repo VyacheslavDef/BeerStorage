@@ -1,104 +1,76 @@
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-
-input {
-    border: 3px solid #FFE6FF;
-    width: 200px;
-    margin-top: 15px;
-}
-
-body {
-    background-color: #E8D4D1;
-}
-
-button {
-    padding: 5px 15px;
-    background: transparent;
-    border: 2px solid #FFE6FF;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.App {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.beer_card_container {
-    width: 300px;
-    border: 5px solid #FFEDE6;
-    border-radius: 10px;
-    height: 450px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 20px;
-}
-
-.img_beer {
-    width: auto;
-    height: 230px;
-}
-
-.beer_container {
-    height: auto;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-
-.img_beer_page {
-    width: auto;
-    height: 300px;
-}
-
-.beer_page_mid {
-    margin: 20px;
-}
-
-.beer_page_bot {
-margin: 10px;
-max-width: 600px;
-margin: auto;
-border-radius: 20px;
-background-color: #FFEDE6;
-}
-
 p {
-    padding: 8px;
-    line-height: 30px;
+  font-size: 20px;
 }
 
-.p {
-    line-height: 30px;
+.a {
+  text-decoration: none;
+  color: black;
 }
 
-
-.container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
+.a:hover {
+  color: black;
 }
 
-.page_current {
-    background-color: green;
+.main_page {
+  background: url(./img/bg\ 2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.main_page .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main_page .container h1 {
+  margin: 5px;
+}
+.main_page .container input {
+  border: black;
 }
 
-
-.box {
-    max-width: 800px;
-    width: 100%;
+.card {
+  max-width: 850px;
+}
+.card .card-left-side {
+  display: flex;
+  justify-content: center;
+}
+.card .card-left-side .img-card {
+  height: 500px;
+  margin: 10px 0 10px 10px;
+}
+.card .card-right-side {
+  display: flex;
+  justify-content: center;
+}
+.card .card-right-side .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.mb {
-    margin-bottom: 25px;
+.beer_page {
+  background: url(./img/bg\ beercard.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  max-height: 100%;
+  padding-bottom: 200px;
 }
-
+.beer_page .beer_container {
+  display: flex;
+  justify-content: space-between;
+}
+.beer_page .beer_container .beer_page_top_left {
+  background: white;
+  width: 25%;
+}
+.beer_page .beer_container .beer_page_top_right {
+  width: 50%;
+}
+.beer_page .beer_container .beer_page_top_right .img_beer_page {
+  height: 600px;
+}
+.beer_page .beer_page_text {
+  background: white;
+  padding: 10px;
+}/*# sourceMappingURL=App.css.map */
