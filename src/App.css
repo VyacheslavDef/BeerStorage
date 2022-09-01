@@ -29,14 +29,14 @@ p {
 }
 
 .card {
-  max-width: 850px;
+  width: 850px;
 }
 .card .card-left-side {
   display: flex;
   justify-content: center;
 }
 .card .card-left-side .img-card {
-  height: 500px;
+  height: 250px;
   margin: 10px 0 10px 10px;
 }
 .card .card-right-side {
@@ -46,6 +46,10 @@ p {
 .card .card-right-side .card-body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+.card .card-right-side .card-body .card-body-top {
+  display: flex;
   justify-content: space-between;
 }
 
