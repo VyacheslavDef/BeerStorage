@@ -10,16 +10,17 @@ import { getPages } from "../utils/utils";
 function MainPage() {
   const [beerPost, setBeerPost] = useState([]);
 
+  const [berPostFaw, setBerPostFaw] = useState([]);
+
   const [searchBeer, setSearchBeer] = useState("");
 
   const { per_page, current_page } = useParams();
 
   const [totalCount] = useState(325);
   const [totalPages, setTotalPages] = useState(0);
+
   const [page, setPage] = useState(current_page);
   const [perPage] = useState(per_page);
-
-
 
   const filtersBeer = beerPost.filter((beer) => {
     return beer.name.toLowerCase().includes(searchBeer.toLowerCase());
@@ -33,7 +34,7 @@ function MainPage() {
 
   useEffect(() => {
     beerPosts(page, perPage);
-  }, [page, perPage]);
+  }, []);
 
   const changePage = (page, per_page) => {
     setPage(page);
@@ -41,13 +42,24 @@ function MainPage() {
   };
 
   const change = (id) => {
-   const newarr = beerPost.map((faw) => {
+    const newarr = beerPost.map((faw) => {
       if (faw.id === id) {
-      return { ...faw, favorites: !faw.favorites}
+        return { ...faw, favorites: !faw.favorites };
       }
-      return faw
+      return faw;
+    });
+    newarr.forEach((x) => {
+      if (x.favorites === true) {
+        setBerPostFaw([
+          ...berPostFaw, x.id
+        ])
+        console.log(true)
+      } else {
+        console.log(false)
+      }
     })
-    setBeerPost(newarr)
+    setBeerPost(newarr);
+    console.log(berPostFaw)
   };
 
   return beerPost.length ? (

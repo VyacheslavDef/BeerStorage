@@ -20,7 +20,7 @@ const BeerCard = ({ beerPost, change }) => {
             <div className="card-body-top">
               <h2 className="card-title">{beerPost.name}</h2>
               <i
-                class={"bi bi-heart" + (beerPost.favorites ? "-fill" : "")}
+                className={"bi bi-heart" + (beerPost.favorites ? "-fill" : "")}
                 onClick={() => change(beerPost.id)}
               ></i>
             </div>
