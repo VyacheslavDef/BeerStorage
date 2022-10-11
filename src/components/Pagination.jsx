@@ -10,9 +10,9 @@ const Pagination = ({ page, totalPages, changePage }) => {
   return (
     <ul className="pagination">
       {pagesArray.map((p) => (
-        <li key={p} className={page === p ? "page-item active" : "page-item"}>
+        <li key={p} className={Number(page) === Number(p) ? "page-item active" : "page-item"}>
           <Link
-          className="page-link"
+            className="page-link"
             to={`/test-on-react/page/${p}:${per_page}`}
             onClick={() => changePage(p, per_page)}
           >
