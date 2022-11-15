@@ -53,13 +53,15 @@ function MainPage() {
         setBerPostFaw([
           ...berPostFaw, x.id
         ])
-        console.log(true)
       } else {
-        console.log(false)
+        const indexFaw = berPostFaw.indexOf(x.id)
+        if (indexFaw !== -1) {
+          berPostFaw.splice(indexFaw, 1)
+          setBerPostFaw(berPostFaw)
+        }
       }
     })
     setBeerPost(newarr);
-    console.log(berPostFaw)
   };
 
   return beerPost.length ? (
@@ -68,14 +70,13 @@ function MainPage() {
         <h1>BEERS STORAGE</h1>
         <input
           className="mb-5"
-          placeholder="Search..."
+          placeholder="Поиск..."
           value={searchBeer}
           onChange={(e) => setSearchBeer(e.target.value)}
         ></input>
         {filtersBeer.map((beerPost) => (
           <BeerCard beerPost={beerPost} key={beerPost.id} change={change} />
         ))}
-
         <Pagination
           page={page}
           totalPages={totalPages}

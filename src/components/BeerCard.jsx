@@ -13,12 +13,14 @@ const BeerCard = ({ beerPost, change }) => {
     <div className="card mb-5">
       <div className="row">
         <div className="col-md-4 card-left-side">
-          <img src={beerPost.image_url} className="img-card" alt=""></img>
+          <div className="img_class">
+            <img src={beerPost.image_url} className="img-card" alt=""></img>
+          </div>
         </div>
         <div className="col-md-8 card-right-side">
           <div className="card-body">
             <div className="card-body-top">
-              <h2 className="card-title">{beerPost.name}</h2>
+              <h4 className="card-title">{beerPost.name}</h4>
               <i
                 className={"bi bi-heart" + (beerPost.favorites ? "-fill" : "")}
                 onClick={() => change(beerPost.id)}

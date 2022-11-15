@@ -21,7 +21,7 @@ const Pagination = ({ page, totalPages, changePage }) => {
         </li>
       ))}
     </ul>
-  );
+  )
 };
 
 export default Pagination;

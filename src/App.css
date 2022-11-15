@@ -1,5 +1,18 @@
 p {
-  font-size: 20px;
+  font-size: 15px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: black;
 }
 
 .a {
@@ -11,10 +24,41 @@ p {
   color: black;
 }
 
+.load {
+  min-height: 2000px;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: black;
+  color: white;
+}
+.header a {
+  text-decoration: none;
+  color: white;
+}
+.header a:hover {
+  color: yellow;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: black;
+  color: white;
+}
+
+.tittle_page {
+  min-height: 1000px;
+}
+
 .main_page {
   background: url(./img/bg\ 2.png);
   background-size: cover;
   background-repeat: no-repeat;
+  min-height: 1000px;
 }
 .main_page .container {
   display: flex;
@@ -30,14 +74,18 @@ p {
 
 .card {
   width: 850px;
+  height: 300px;
 }
 .card .card-left-side {
   display: flex;
   justify-content: center;
 }
-.card .card-left-side .img-card {
-  height: 250px;
-  margin: 10px 0 10px 10px;
+.card .card-left-side .img_class {
+  height: 230px;
+  margin: 5px;
+}
+.card .card-left-side .img_class .img-card {
+  height: 100%;
 }
 .card .card-right-side {
   display: flex;
@@ -67,6 +115,8 @@ p {
 .beer_page .beer_container .beer_page_top_left {
   background: white;
   width: 25%;
+  border-radius: 10px;
+  height: 100%;
 }
 .beer_page .beer_container .beer_page_top_right {
   width: 50%;
@@ -77,4 +127,5 @@ p {
 .beer_page .beer_page_text {
   background: white;
   padding: 10px;
+  border-radius: 10px;
 }/*# sourceMappingURL=App.css.map */

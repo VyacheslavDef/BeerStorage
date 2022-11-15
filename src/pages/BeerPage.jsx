@@ -23,8 +23,19 @@ const BeerPage = () => {
           <img className="img_beer_page" src={beer.image_url} alt="" />
         </div>
         <div className="beer_page_top_left">
-          <div>
-            <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum dignissimos, eveniet, facilis molestias consequuntur pariatur doloribus recusandae sed explicabo, eum architecto atque voluptates sequi soluta iure delectus laborum tempore aperiam.</h4>
+          <div className="left_description">
+            <p>
+              <b>ABV: </b>
+            </p>
+            <p>{beer.abv}</p>
+            <p>
+              <b>IBU: </b>
+            </p>
+            <p>{beer.ibu}</p>
+            <p>
+              <b>Впервые сварено: </b>
+            </p>
+            <p>{beer.first_brewed}</p>
           </div>
         </div>
         </div>
@@ -38,10 +49,6 @@ const BeerPage = () => {
             <b>Описание: </b>
           </p>
           <p>{beer.description}</p>
-          <p>
-            <b>ABV: </b>
-          </p>
-          <p>{beer.abv}</p>
           <p>
             <b>Cочетаемость с едой: </b>
           </p>
