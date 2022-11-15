@@ -28,11 +28,11 @@ const BeerCard = ({ beerPost, change }) => {
             </div>
             <p className="card-text">{shortDesc}</p>
             <div className="card-button">
+            <Link to={"/test-on-react/beers/" + beerPost.id}>
               <button type="button" className="btn btn-outline-dark btn-lg">
-                <Link className="a" to={"/test-on-react/beers/" + beerPost.id}>
                   Подробнее
-                </Link>
               </button>
+              </Link>
             </div>
           </div>
         </div>

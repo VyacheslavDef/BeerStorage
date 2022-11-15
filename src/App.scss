@@ -6,21 +6,7 @@ ol, ul {
 	list-style: none;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-a:hover {
-  color: black;
-}
 
-.a {
-  text-decoration: none;
-  color: black;
-}
-.a:hover {
-  color: black;
-}
 
 .load {
   min-height: 2000px;
@@ -49,6 +35,13 @@ a:hover {
 
 .tittle_page {
   min-height: 1000px;
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: black;
+    }
+  }
 }
 
 .main_page {
@@ -90,6 +83,7 @@ a:hover {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+
       .card-body-top {
         display: flex;
         justify-content: space-between;

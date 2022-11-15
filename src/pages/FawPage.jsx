@@ -1,5 +1,4 @@
 import React from 'react'
-import BeerCard from '../components/BeerCard'
 
 const FawPage = ({ faw }) => {
   return (
