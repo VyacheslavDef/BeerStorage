@@ -6,6 +6,10 @@ ol, ul {
   list-style: none;
 }
 
+.container {
+  min-height: 900px;
+}
+
 .load {
   min-height: 2000px;
 }
@@ -15,6 +19,19 @@ ol, ul {
   height: 80px;
   background-color: black;
   color: white;
+}
+.header .header_center {
+  height: 100%;
+}
+.header .header_center .header_center_items {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.header .header_center .header_center_items li {
+  padding: 0 25px 0 25px;
 }
 .header a {
   text-decoration: none;
