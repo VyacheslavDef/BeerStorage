@@ -18,6 +18,8 @@ ol, ul {
   height: 80px;
   background-color: black;
   color: white;
+  display: flex;
+  justify-content: space-between;
   .header_center {
     height: 100%;
 

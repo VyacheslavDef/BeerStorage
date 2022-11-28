@@ -10,9 +10,9 @@ import { getPages } from "../utils/utils";
 function MainPage() {
   const [beerPost, setBeerPost] = useState([]);
 
-  const [berPostFaw, setBerPostFaw] = useState([]);
+  const [allBeer, setAllBeer] = useState([])
 
-  const [searchBeer, setSearchBeer] = useState("");
+  const [berPostFaw, setBerPostFaw] = useState([]);
 
   const { per_page, current_page } = useParams();
 
@@ -22,25 +22,35 @@ function MainPage() {
   const [page, setPage] = useState(current_page);
   const [perPage] = useState(per_page);
 
-  const filtersBeer = beerPost.filter((beer) => {
-    return beer.name.toLowerCase().includes(searchBeer.toLowerCase());
-  });
 
+  // Подгрузка страницы с апишной пагинацией
   async function beerPosts(page, perPage) {
-    const responce = await PostService.getAll(page, perPage);
+    const responce = await PostService.getPagination(page, perPage);
     setBeerPost(responce.data);
     setTotalPages(getPages(totalCount, perPage));
+  }
+  // Подгрузка фильтрации по пиву
+  async function allPostBeer(param, num) {
+    const responce = await PostService.getAll(param, num);
+    setBeerPost(responce.data)
   }
 
   useEffect(() => {
     beerPosts(page, perPage);
   }, []);
 
+  const test = () => {
+    const qq = 'abv_gt'
+    const num = 10
+    allPostBeer(qq, num)
+  }
+
   const changePage = (page, per_page) => {
     setPage(page);
     beerPosts(page, per_page);
   };
 
+  //Букмарк и фаворитное пиво
   const change = (id) => {
     const newarr = beerPost.map((faw) => {
       if (faw.id === id) {
@@ -68,13 +78,8 @@ function MainPage() {
     <section className="main_page">
       <div className="container">
         <h1>BEERS STORAGE</h1>
-        <input
-          className="mb-5"
-          placeholder="Поиск..."
-          value={searchBeer}
-          onChange={(e) => setSearchBeer(e.target.value)}
-        ></input>
-        {filtersBeer.map((beerPost) => (
+        <button onClick={test}>TEST</button>
+        {beerPost.map((beerPost) => (
           <BeerCard beerPost={beerPost} key={beerPost.id} change={change} />
         ))}
         <Pagination

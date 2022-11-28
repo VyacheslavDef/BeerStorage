@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Cup from "./Cup";
 
 const Header = () => {
   return (
@@ -15,7 +16,9 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <div className="header_right"></div>
+      <div className="header_right">
+        <Cup/>
+      </div>
     </div>
   );
 };
