@@ -6,11 +6,22 @@ import BeerCard from "../components/BeerCard";
 import Loader from "../components/loader/Loader";
 import Pagination from "../components/Pagination";
 import { getPages } from "../utils/utils";
+import Select from "../components/Select";
 
 function MainPage() {
   const [beerPost, setBeerPost] = useState([]);
 
-  const [allBeer, setAllBeer] = useState([])
+  const [searchBeer, setSearchBeer] = useState("");
+  const [valueSearchBeer, setValueSearchBeer] = useState("beer_name");
+
+  const valueBeer = {
+    beer_name: "Название напитка",
+    abv_gt: "Больше алкоголя",
+    abv_lt: "Меньше алкоголя",
+    ibu_gt: "Больше IBU",
+    ibu_lt: "Меньше IBU",
+    food: "Предпочитаемая еда",
+  };
 
   const [berPostFaw, setBerPostFaw] = useState([]);
 
@@ -22,7 +33,6 @@ function MainPage() {
   const [page, setPage] = useState(current_page);
   const [perPage] = useState(per_page);
 
-
   // Подгрузка страницы с апишной пагинацией
   async function beerPosts(page, perPage) {
     const responce = await PostService.getPagination(page, perPage);
@@ -30,9 +40,9 @@ function MainPage() {
     setTotalPages(getPages(totalCount, perPage));
   }
   // Подгрузка фильтрации по пиву
-  async function allPostBeer(param, num) {
+  async function allPostBeer(param='beer_name', num) {
     const responce = await PostService.getAll(param, num);
-    setBeerPost(responce.data)
+    setBeerPost(responce.data);
   }
 
   useEffect(() => {
@@ -40,10 +50,8 @@ function MainPage() {
   }, []);
 
   const test = () => {
-    const qq = 'abv_gt'
-    const num = 10
-    allPostBeer(qq, num)
-  }
+    allPostBeer(valueSearchBeer, searchBeer);
+  };
 
   const changePage = (page, per_page) => {
     setPage(page);
@@ -60,17 +68,15 @@ function MainPage() {
     });
     newarr.forEach((x) => {
       if (x.favorites === true) {
-        setBerPostFaw([
-          ...berPostFaw, x.id
-        ])
+        setBerPostFaw([...berPostFaw, x.id]);
       } else {
-        const indexFaw = berPostFaw.indexOf(x.id)
+        const indexFaw = berPostFaw.indexOf(x.id);
         if (indexFaw !== -1) {
-          berPostFaw.splice(indexFaw, 1)
-          setBerPostFaw(berPostFaw)
+          berPostFaw.splice(indexFaw, 1);
+          setBerPostFaw(berPostFaw);
         }
       }
-    })
+    });
     setBeerPost(newarr);
   };
 
@@ -78,7 +84,14 @@ function MainPage() {
     <section className="main_page">
       <div className="container">
         <h1>BEERS STORAGE</h1>
-        <button onClick={test}>TEST</button>
+        <Select
+          valueSearchBeer={setValueSearchBeer}
+          valueBeer={valueBeer}
+          setSearchBeer={setSearchBeer}
+          test={test}
+          searchBeer={searchBeer}
+          defaultValue='Выберете значение'
+        />
         {beerPost.map((beerPost) => (
           <BeerCard beerPost={beerPost} key={beerPost.id} change={change} />
         ))}
@@ -86,6 +99,7 @@ function MainPage() {
           page={page}
           totalPages={totalPages}
           changePage={changePage}
+          beerPost={beerPost}
         />
       </div>
     </section>

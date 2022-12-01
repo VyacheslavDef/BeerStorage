@@ -12,7 +12,7 @@ export default class PostService {
         return data[0];
       }
 
-      static async getAll(qq='abv_gt', num=10) {
+      static async getAll(qq='beer_name', num) {
         const allBeer = await axios.get(`https://api.punkapi.com/v2/beers?${qq}=${num}`);
         console.log(allBeer)
         return allBeer;

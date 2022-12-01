@@ -14,7 +14,7 @@ const BeerPage = () => {
   useEffect(() => {
     fetchBeerId(id);
   }, [id]);
-
+  console.log(beer)
   return beer ? (
     <section className="beer_page">
     <div className="container p-5">
