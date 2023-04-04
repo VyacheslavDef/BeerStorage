@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import BeerPage from "./pages/BeerPage";
+import "./style/App.css";
+import BeerPage from "./pages/BeerPage/BeerPage";
 import ErrorPage from "./pages/ErrorPage";
-import MainPage from "./pages/MainPage";
-import TitlePage from "./pages/TitlePage";
+import MainPage from "./pages/MainPage/MainPage";
+import TitlePage from "./pages/TitlePage/TitlePage";
 import FawPage from "./pages/FawPage";
 
 function App() {

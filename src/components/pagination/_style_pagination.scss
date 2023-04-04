@@ -1,0 +1,22 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+}
+
+.page-item {
+    margin: 2px;
+    width: 30px;
+    background: $clrBcknd;
+    text-align: center;
+    border-radius: 20%;
+
+}
+
+.page-link {
+    color: $clrMain;
+}
+
+.active {
+    background: $clrBrdr;
+}

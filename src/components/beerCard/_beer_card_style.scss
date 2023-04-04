@@ -1,0 +1,54 @@
+.beer_card_wrapper {
+  background-color: $clrScnd;
+  padding: 20px;
+  border-radius: 30px;
+  border: 5px solid rgba(1, 1, 1, 0.1);
+  color: $clrMain;
+  height: 350px;
+}
+
+.beer_card-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.beer_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.img_beer_card {
+  height: 150px;
+  width: auto;
+}
+
+.beer_card_disc {
+  display: flex;
+  flex-direction: column;
+}
+
+.name_item_beer {
+  font-size: 26px;
+  padding: 5px 0;
+}
+
+.disc_item_beer {
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.beer_card-btn {
+  background: $clrBrdr;
+  padding: 4px 16px;
+  border: 2px solid $clrText;
+  border-radius: 5px;
+  color: $clrMain;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.beer_card-btn-text {
+  font-family: "Commissioner", sans-serif;
+}

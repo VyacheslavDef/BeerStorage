@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App";
-import "../node_modules/bootstrap/dist/css/bootstrap.css"
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./components/header/Header";
+// import Footer from "./components/footer/Footer";
+import { store } from './state_redux/index';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <Header/>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Header />
       <App />
-    <Footer />
-  </BrowserRouter>
+    </BrowserRouter>
+  </Provider>
 );

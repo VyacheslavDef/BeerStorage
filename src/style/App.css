@@ -1,0 +1,519 @@
+@import 'https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600;800&family=Rubik+Moonrocks&display=swap';
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  background: #f9f8f5;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+.title_page-wrapper {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.title_btn {
+  padding: 16px 32px;
+  display: inline-block;
+  color: #F2A766;
+  border: 3px solid #162840;
+  border-radius: 20px;
+  background: #3B5E8C;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+.title_btn:hover {
+  transform: scale(1.15);
+}
+
+.random_beer-wrapper {
+  margin-bottom: 80px;
+}
+
+.random_beer {
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.random_beer-btn {
+  width: 100%;
+  padding: 16px 32px;
+  color: #F2A766;
+  border: 3px solid #162840;
+  border-radius: 20px;
+  background: #3B5E8C;
+  font-family: "Commissioner", sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  transition: all 0.2s;
+}
+
+.random_beer-btn:hover {
+  transform: scaleX(1.05);
+}
+
+.random_beer-btn:active {
+  transform: scale(1.2);
+}
+
+.beer_card_wrapper {
+  background-color: #3B5E8C;
+  padding: 20px;
+  border-radius: 30px;
+  border: 5px solid rgba(1, 1, 1, 0.1);
+  color: #F2A766;
+  height: 350px;
+}
+
+.beer_card-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.beer_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.img_beer_card {
+  height: 150px;
+  width: auto;
+}
+
+.beer_card_disc {
+  display: flex;
+  flex-direction: column;
+}
+
+.name_item_beer {
+  font-size: 26px;
+  padding: 5px 0;
+}
+
+.disc_item_beer {
+  font-size: 16px;
+  padding: 5px 0;
+}
+
+.beer_card-btn {
+  background: #162840;
+  padding: 4px 16px;
+  border: 2px solid #233059;
+  border-radius: 5px;
+  color: #F2A766;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.beer_card-btn-text {
+  font-family: "Commissioner", sans-serif;
+}
+
+.beer_page {
+  padding: 50px;
+}
+.beer_page .beer_container {
+  display: flex;
+  justify-content: space-between;
+}
+.beer_page .beer_container .beer_page_top_left {
+  padding: 10px;
+  background: white;
+  width: 25%;
+  border-radius: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.beer_page .beer_container .beer_page_top_right {
+  width: 50%;
+  padding: 20px;
+}
+.beer_page .beer_container .beer_page_top_right .img_beer_page {
+  height: 400px;
+}
+.beer_page .beer_page_text {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.left_description .left_description-main-text {
+  font-weight: 700;
+}
+
+.beer_page_bot-text {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.page-item {
+  margin: 2px;
+  width: 30px;
+  background: #6382BF;
+  text-align: center;
+  border-radius: 20%;
+}
+
+.page-link {
+  color: #F2A766;
+}
+
+.active {
+  background: #162840;
+}
+
+.main_page .beers_cards_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  margin-bottom: 80px;
+}
+
+.faw_wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+}
+
+.mt-8 {
+  margin-top: 8px;
+}
+
+.mt-16 {
+  margin-top: 16px;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mt-32 {
+  margin-top: 32px;
+}
+
+.mt-40 {
+  margin-top: 40px;
+}
+
+.mt-48 {
+  margin-top: 48px;
+}
+
+.mt-50 {
+  margin-top: 50px;
+}
+
+.mt-56 {
+  margin-top: 56px;
+}
+
+.mt-64 {
+  margin-top: 64px;
+}
+
+.mt-72 {
+  margin-top: 72px;
+}
+
+.mt-80 {
+  margin-top: 80px;
+}
+
+.mr-8 {
+  margin-right: 8px;
+}
+
+.mr-16 {
+  margin-right: 16px;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
+.mr-32 {
+  margin-right: 32px;
+}
+
+.mr-40 {
+  margin-right: 40px;
+}
+
+.mr-48 {
+  margin-right: 48px;
+}
+
+.mr-50 {
+  margin-right: 50px;
+}
+
+.mr-56 {
+  margin-right: 56px;
+}
+
+.mr-64 {
+  margin-right: 64px;
+}
+
+.mr-72 {
+  margin-right: 72px;
+}
+
+.mr-80 {
+  margin-right: 80px;
+}
+
+.mb-8 {
+  margin-bottom: 8px;
+}
+
+.mb-16 {
+  margin-bottom: 16px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+}
+
+.mb-48 {
+  margin-bottom: 48px;
+}
+
+.mb-50 {
+  margin-bottom: 50px;
+}
+
+.mb-56 {
+  margin-bottom: 56px;
+}
+
+.mb-64 {
+  margin-bottom: 64px;
+}
+
+.mb-72 {
+  margin-bottom: 72px;
+}
+
+.mb-80 {
+  margin-bottom: 80px;
+}
+
+.ml-8 {
+  margin-left: 8px;
+}
+
+.ml-16 {
+  margin-left: 16px;
+}
+
+.ml-24 {
+  margin-left: 24px;
+}
+
+.ml-32 {
+  margin-left: 32px;
+}
+
+.ml-40 {
+  margin-left: 40px;
+}
+
+.ml-48 {
+  margin-left: 48px;
+}
+
+.ml-50 {
+  margin-left: 50px;
+}
+
+.ml-56 {
+  margin-left: 56px;
+}
+
+.ml-64 {
+  margin-left: 64px;
+}
+
+.ml-72 {
+  margin-left: 72px;
+}
+
+.ml-80 {
+  margin-left: 80px;
+}
+
+body {
+  background: #F2A766;
+  color: #233059;
+}
+
+p {
+  font-size: 16px;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+.text_title {
+  text-align: center;
+  font-size: 80px;
+  padding: 25px;
+  margin-bottom: 70px;
+  color: #233059;
+  font-family: "Rubik Moonrocks", cursive;
+}
+
+h1 {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 800;
+  font-size: 56px;
+}
+
+h2 {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 600;
+  font-size: 48px;
+}
+
+h3 {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+p {
+  font-family: "Commissioner", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.font-sm {
+  font-size: 14px;
+}
+
+.container {
+  max-width: 1200px;
+  min-height: 700px;
+  padding: 0 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ds-none {
+  display: none;
+}
+
+.load {
+  min-height: 1000px;
+}
+
+.header {
+  padding: 10px;
+  width: 100%;
+  height: 80px;
+  background-color: #3B5E8C;
+  color: #F2A766;
+  display: flex;
+  justify-content: space-between;
+}
+.header .header_center {
+  height: 100%;
+}
+.header .header_center .header_center_items {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+.header .header_center .header_center_items li {
+  padding: 0 25px 0 25px;
+}
+.header a {
+  text-decoration: none;
+  color: #F2A766;
+}
+.header a:hover {
+  color: #DCE2F2;
+}
+
+a {
+  text-decoration: none;
+  color: #6382BF;
+}
+
+img {
+  height: 100%;
+  width: auto;
+}/*# sourceMappingURL=App.css.map */
