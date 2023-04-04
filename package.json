@@ -2,7 +2,7 @@
   "name": "my_test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vyacheslavdef.github.io/test-on-react",
+  "homepage": "https://vyacheslavdef.github.io/BeerStorage",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.3",
     "@testing-library/jest-dom": "^5.16.4",

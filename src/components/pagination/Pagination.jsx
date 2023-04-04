@@ -13,7 +13,7 @@ const Pagination = ({ page, totalPages, changePage, beerPost }) => {
         <Link
         key={index}
           className="page-link"
-          to={`/test-on-react/page/${p}:${per_page}`}
+          to={`/BeerStorage/page/${p}:${per_page}`}
           onClick={() => changePage(p, per_page)}
         >
           <li

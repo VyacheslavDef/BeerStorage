@@ -17,7 +17,7 @@ const BeerCard = ({ beerPost }) => {
           <p className="disc_item_beer">Alc: {beerPost.abv}</p>
           <p className="disc_item_beer">IBU: {beerPost.ibu}</p>
         </div>
-        <Link to={"/test-on-react/beers/" + beerPost.id}>
+        <Link to={"/BeerStorage/beers/" + beerPost.id}>
           <button type="button" className="beer_card-btn">
             <span className="beer_card-btn-text">Подробнее</span>
           </button>

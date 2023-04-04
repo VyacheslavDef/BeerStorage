@@ -46,31 +46,6 @@ const Select = ({
           </button>
         </div>
       </section>
-      {/* <div className="search_wrapper">
-        <h2 className="title_search">Найдите пиво которое так давно искали!</h2>
-        <div className="select_input_wrapper">
-          <select
-            className="select"
-            name="select"
-            onChange={(e) => valueSearchBeer(e.target.value)}
-          >
-            {Object.keys(valueBeer).map((x) => (
-              <option className="option" key={x} value={x}>
-                {valueBeer[x]}
-              </option>
-            ))}
-          </select>
-          <input
-            className="input"
-            placeholder="Значение"
-            value={searchBeer}
-            onChange={(e) => setSearchBeer(e.target.value)}
-          ></input>
-        </div>
-        <button className="btn_search" onClick={test}>
-          Найти
-        </button>
-      </div> */}
     </>
   );
 };

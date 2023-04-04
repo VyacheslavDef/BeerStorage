@@ -9,10 +9,10 @@ const Header = () => {
       <div className="header_center">
         <ul className="header_center_items">
           <li>
-            <Link to={"/test-on-react"}>Главная</Link>
+            <Link to={"/BeerStorage"}>Главная</Link>
           </li>
           <li>
-            <Link to={"/test-on-react/faworits"}>Избранное</Link>
+            <Link to={"/BeerStorage/faworits"}>Избранное</Link>
           </li>
         </ul>
       </div>

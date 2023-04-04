@@ -20,7 +20,7 @@ const TitlePage = () => {
     <div className="container title_page">
       <div className="title_page-wrapper">
         <h1 className="text_title">BEERS STORAGE</h1>
-        <Link className="a" to={"/test-on-react/page/1:24"}>
+        <Link className="a" to={"/BeerStorage/page/1:24"}>
           <div className="title_btn">Начать поиск!</div>
         </Link>
       </div>
